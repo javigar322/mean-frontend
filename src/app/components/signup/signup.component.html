@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card">
+      <div class="card-header">SignUp</div>
+      <div class="card-body">
+        <form (submit)="signUp()">
+          <div class="mb-3">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="nombre"
+              aria-label="nombre"
+              [(ngModel)]="user.name"
+              autofocus
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="password"
+              aria-label="password"
+              [(ngModel)]="user.password"
+              required
+            />
+          </div>
+          @if (errorMessage) {
+            <div class="alert alert-danger" role="alert">
+              {{ errorMessage }}
+            </div>
+          }
+          <button type="submit" class="btn btn-primary btn-block w-100">
+            Sign up
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
